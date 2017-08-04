@@ -15,8 +15,8 @@ import decode
 
 #define
 mTimeMax=30
-mPubAddr01="00:1e:c0:46:2f:62"
-mPubAddr02="00:1e:c0:46:2b:ac"
+mPubAddr01=""
+mPubAddr02=""
 mPubAddr03=""
 
 mNG_CODE=0
