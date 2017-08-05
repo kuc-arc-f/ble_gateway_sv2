@@ -50,6 +50,7 @@ https://github.com/kuc-arc-f/ble_gateway_sv
 http://knaka0209.blogspot.jp/2017/08/nanoPi-4.html
 
 (related blog )
+
 rasPi BLE server:
 
 http://knaka0209.blogspot.jp/2017/07/raspi-5-BLE.html
