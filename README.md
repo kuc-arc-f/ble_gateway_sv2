@@ -32,7 +32,6 @@ https://github.com/IanHarvey/bluepy
  ex: mPubAddr01="00:00:00:00:00:00" and add to init_param()
 * http_func.py -- http send URL, setting 
 * ble_gateway_sv.py send_http() -- request param setting
-* 
 * sudo python ble_gateway_sv.py
 
 ***
@@ -49,6 +48,16 @@ https://github.com/kuc-arc-f/ble_gateway_sv
 ### blog
 
 http://knaka0209.blogspot.jp/2017/08/nanoPi-4.html
+
+(related blog )
+rasPi BLE server:
+
+http://knaka0209.blogspot.jp/2017/07/raspi-5-BLE.html
+
+peripheral device:
+
+http://knaka0209.blogspot.jp/2017/07/esp32-21.html
+
 
 ***
 
