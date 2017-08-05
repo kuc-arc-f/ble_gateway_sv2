@@ -32,7 +32,7 @@ https://github.com/IanHarvey/bluepy
  ex: mPubAddr01="00:00:00:00:00:00" and add to init_param()
 * http_func.py -- http send URL, setting 
 * ble_gateway_sv.py send_http() -- request param setting
-* sudo python ble_gateway_sv.py
+* sudo python ble_gateway_sv2.py
 
 ***
 
