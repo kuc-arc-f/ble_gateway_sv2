@@ -6,6 +6,7 @@
 
  date    : 2017/08/05
 
+ update  : 2017/08/17
 ***
 
 ## Summary
@@ -27,9 +28,11 @@ https://github.com/IanHarvey/bluepy
 
 ***
 ### Usage
-* ble_gateway_sv.py /public address setting (48 bit)
+* config.json --device name ,public address (48 bit) setting 
  
- ex: mPubAddr01="00:00:00:00:00:00" and add to init_param()
+ ex: config-sample.json
+
+
 * http_func.py -- http send URL, setting 
 * ble_gateway_sv.py send_http() -- request param setting
 * sudo python ble_gateway_sv2.py
@@ -37,6 +40,10 @@ https://github.com/IanHarvey/bluepy
 ***
 
 ### update
+* v0.9.2 -- device config (json) read process add.
+
+ blog: http://knaka0209.blogspot.jp/2017/08/nanoPi-6.html
+
 * v0.9,1  new
 
  related (old) version: 
