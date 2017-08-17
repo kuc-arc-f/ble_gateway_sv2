@@ -1,5 +1,7 @@
 #
-# raspberryPi, BLE Gateway server.
+# raspberryPi, BLE Gateway server2.
+# version : 0.9.2
+# date : 2017/08/17
 #
 from bluepy.btle import Scanner, DefaultDelegate
 from bluepy import btle
@@ -12,12 +14,10 @@ import appConst
 import datModel
 import http_func
 import decode
+import config
 
 #define
 mTimeMax=30
-mPubAddr01=""
-mPubAddr02=""
-mPubAddr03=""
 
 mNG_CODE=0
 mOK_CODE=1
@@ -33,12 +33,15 @@ class ScanDelegate(DefaultDelegate):
             print "Received new data from", dev.addr
 
 def init_param(clsDat ):
-#	clsDat= datModel.datModelClass()
+	clsConst=appConst.appConstClass()
+	cls= config.configClass()
 	clsDat.init_proc()
-	clsDat.set_addr(0,  mPubAddr01)
-	clsDat.set_addr(1,  mPubAddr02)
+	cls.load_config(clsConst.mDeviceFile )
+#	clsDat.set_addr(0,  mPubAddr01)
+#	clsDat.set_addr(1,  mPubAddr02)
+#	clsDat.set_addr(2,  mPubAddr03)
 	
-	#clsDat.debug_printDat()
+	clsDat.debug_printDat()
 	
 #def set_advManufact(clsDat ,value ):
 def set_advManufact(clsDat ,value ,addr ):
@@ -75,12 +78,16 @@ def send_http(clsDat):
 	clsDat.debug_printDat()
 	print("# http-start")
 	sReq=""
-	sV1=clsDat.get_datByAddr(mPubAddr01 , 1)
+	sV1=clsDat.get_datByName("device1" , 1)
 	if (len(sV1 ) > 0 ):
 		sReq +="&field1=" + str(sV1)
-	sV2=clsDat.get_datByAddr(mPubAddr02 , 1)
+	sV2=clsDat.get_datByName("device2" , 1)
 	if (len(sV2 ) > 0 ):
 		sReq +="&field2=" + str(sV2)
+	sV3=clsDat.get_datByName("device3" , 1)
+	if (len(sV3 ) > 0 ):
+		sReq +="&field3=" + str(sV3)
+		
 	th=threading.Thread(target=execute_httpSend ,args=(sReq, ) )
 	th.start()
 

@@ -3,7 +3,7 @@ import requests
 import json
 
 mURL="http://api.thingspeak.com"
-mAPI_KEY="your-KEY"
+mAPI_KEY="your-key"
 
 #http_func
 class http_funcClass:

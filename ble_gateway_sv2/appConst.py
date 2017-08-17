@@ -6,9 +6,10 @@ class appConstClass:
         print ""
     #
     mDesc_Localname="Complete Local Name"
-    mDesc_mafact ="Manufacturer"
+    mDesc_mafact   ="Manufacturer"
     mMax_GapLength   =15
     mMax_GapLength_25=25
+    mDeviceFile      = "config.json"
 
     def test(self, sId):
     	print "test"

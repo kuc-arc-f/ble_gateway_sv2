@@ -3,11 +3,11 @@
 import appConst
 
 #define
-mMaxdevice=5
+mMaxdevice=10
 mBleDat=[]  # List
 mRow = {
-# "adv_name": ""
-  "pubAddr": ""
+ "adv_name": ""
+, "pubAddr": ""
 , "val_1" : ""
 , "val_2" : ""
 , "val_3" : ""
@@ -40,6 +40,11 @@ class datModelClass:
     def set_addr(self,  iNum,  addr):
     	mBleDat[iNum]["pubAddr"]= addr
     
+    #
+    def set_device(self,  iNum,  addr, name):
+    	mBleDat[iNum]["pubAddr"]= addr
+    	mBleDat[iNum]["adv_name"]= name
+    	
     def debug_printDat(self):
     	#print mBleDat
     	for i in range(0 ,mMaxdevice  ):
@@ -50,12 +55,20 @@ class datModelClass:
     		sVal_5=",val_5=" + mBleDat[i]["val_5"]
     		
 #    		print ( "i="+str(i)+ ", name=" + mBleDat[i]["adv_name"] +",val_1=" + mBleDat[i]["val_1"] +",val_2=" + mBleDat[i]["val_2"]+",val_3=" + mBleDat[i]["val_3"]  )
-    		print ( "i="+str(i)+ ", addr=" + mBleDat[i]["pubAddr"] +sVal_1 + sVal_2+ sVal_3 +sVal_4 +sVal_5 )
-    
-    def get_datByAddr(self ,addr , field ):
+    		print ( "i="+str(i)+ ", name=" + mBleDat[i]["adv_name"]  +", addr=" + mBleDat[i]["pubAddr"] +sVal_1 + sVal_2+ sVal_3 +sVal_4 +sVal_5 )
+    #
+#    def get_addrByName(self ,name  ):
+#   	sRet=""
+#   	for i in range(0 ,mMaxdevice  ):
+#   		if ( mBleDat[i]["adv_name"]== name ):
+#   			sRet=mBleDat[i]["pubAddr"]
+#   	return sRet
+    #
+    def get_datByName(self ,name , field ):
     	sRet=""
     	for i in range(0 ,mMaxdevice  ):
-    		if ( mBleDat[i]["pubAddr"]== addr ):
+#    		if ( mBleDat[i]["pubAddr"]== addr ):
+    		if ( mBleDat[i]["adv_name"]== name ):
     			if( field== 1):
     				sRet=mBleDat[i]["val_1"]
     			if( field== 2):
@@ -67,7 +80,7 @@ class datModelClass:
     			if( field== 5 ):
     				sRet=mBleDat[i]["val_5"]
     	return sRet
-    	
+    #
     def recvCount(self):
     	ret= mNG_CODE
     	iCount =0
