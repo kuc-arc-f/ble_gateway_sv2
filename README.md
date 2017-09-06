@@ -42,6 +42,8 @@ https://github.com/IanHarvey/bluepy
 ### update
 * v 0.9.3 -- 1) scan timer change .
 
+ blog :http://knaka0209.blogspot.jp/2017/09/nanoPi-8.html
+
 * v0.9.2 -- device config (json) read process add.
 
  blog: http://knaka0209.blogspot.jp/2017/08/nanoPi-6.html
